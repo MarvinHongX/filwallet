@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fil Wallet</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <div class="main">
+        <div class="title">
+            <img src="../assets/logo.png" alt="Logo" class="logo"> Fil Wallet
+        </div>
+        <div class="content">
+            <div class="info">
+                <!-- Display Balance -->
+                <div class="balance">
+                    <span id="balance"></span>
+                    <span id="unit">&nbsp;FIL</span>
+                </div> <!-- Default balance -->
+        
+                <!-- Address Input with Copy Icon -->
+                <div class="address-container">
+                    <p id="toAddress" class="to-address"></p>
+                    <p id="originalAddress" class="to-address" style="display: none;"></p>
+                    <button id="copyBtn" class="copy-button">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="18"
+                            height="18"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="ml-2 cursor-pointer"
+                        >
+                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+                            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+                        </svg>
+                    </button>
+                    <span id="copiedMessage" style="display: none; margin-left: 10px;">copied!</span> <!-- 복사 완료 메시지 -->
+                </div>
+        
+                <!-- Action Buttons -->
+                <div class="button-container">
+                    <button id="sendBtn" class="circle-button">Send</button>
+                    <button id="receiveBtn" class="circle-button" disabled>Receive</button>
+                </div>
+            </div>
+    
+            <div id="sendForm" class="card" style="display: none;">
+                <div class="form-header">
+                    <h3>Send FIL</h3>
+                    <button id="closeFormBtn" class="close-button">X</button> 
+                </div>
+                
+                <div class="form-body">            
+                    <div class="input-group">
+                        <label for="toInput">Recipient</label>
+                        <textarea id="toInput" class="textarea-field" placeholder="address" required rows="4"></textarea>
+                    </div>
+            
+                    <div class="input-group">
+                        <label for="amountInput">Amount</label>
+                        <input type="number" id="amountInput" class="input-field" placeholder="0 FIL" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="passwordInput">Password</label>
+                        <input type="password" id="passwordInput" class="input-field" placeholder="password" required>
+                    </div>
+            
+                    <button id="submitTransactionBtn" class="submit-button">Send</button>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+
+
+    <script src="../src/app.js"></script>
+</body>
+</html>
